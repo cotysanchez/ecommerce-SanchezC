@@ -52,4 +52,16 @@ getProductById(id){
 }
 
 
+const manager = new ProductManager();
+manager.getProducts();
 
+manager.addProduct("producto prueba","este es un producto prueba", 200,"sin imagen","abc123",25);
+manager.addProduct("Reloj Tommy Hilfiger", "Reloj analogico", 1200, "sin imagen", "abc124", 50);
+manager.addProduct("Cadena Oro", "Cadena de Oro 18 k", 1400, "sin imagen", "abc125", 50);
+
+manager.getProducts();
+
+manager.addProduct('Cadena Oro','Cadena de Oro 18 k',1400,'sin imagen','abc125',50);
+
+manager.getProductById(2);
+manager.getProductById(50);
