@@ -4,7 +4,7 @@ class ProductManager {
 
     static ultId=0;
 
-    constructor(){
+    constructor(path){
         this.products= [];
         this.path = path;
 
