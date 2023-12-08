@@ -66,15 +66,13 @@ class ProductManager {
 }
     //Nuevos metodos desafio 2
 
-    async leeArchivo(){ 
+    async leerArchivo(){ 
 
         try{
             const respuesta= await fs.readFile(this.path, "utf-8");
             const arrayProductos= JSON.parse(respuesta);
             return arrayProductos;
         
-
-
         } catch (error){
             console.log('Error al leer un Archivo', error);
         }
