@@ -1,4 +1,4 @@
-const fs =require("fs").promises;
+const fs =require("fs");
 
 class ProductManager {
 
@@ -69,7 +69,7 @@ class ProductManager {
     async leerArchivo(){ 
 
         try{
-            const respuesta= await fs.readFile(this.path, "utf-8");
+            const respuesta= fs.readFileSync(this.path, "utf-8");
             const arrayProductos= JSON.parse(respuesta);
             return arrayProductos;
         
@@ -82,7 +82,7 @@ class ProductManager {
     async guardarArchivo(arrayProductos){
 
         try {
-            await fs.writeFile(this.path, JSON.stringify(arrayProductos, null,2));
+            fs.writeFileSync(this.path, JSON.stringify(arrayProductos, null,2));
         } catch (eror){
             console.log("Error al Guardar el Archivo", error);
         }
@@ -176,6 +176,8 @@ async function testeamosBusquedaPorId(){
 
 testeamosBusquedaPorId();
 
+
+
 const pulsera ={
     id:1,
     title: "Pulsera",
@@ -186,13 +188,14 @@ const pulsera ={
     stock: 10
 };
 
-/*
+
 async function testeamosActualizar(){
     await manager.updateProduct(1,pulsera);
 }
 
 testeamosActualizar();
-*/
+
+
 
 
 async function testeamosBorrar(){
