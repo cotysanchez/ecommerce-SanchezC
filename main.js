@@ -64,7 +64,7 @@ class ProductManager {
     }
 
 }
-    //Nuevos metodos desafio 2
+    
 
     async leerArchivo(){ 
 
@@ -108,9 +108,20 @@ class ProductManager {
         }
     }
 
+    async deleteProduct(id){
+        try{
+            const arrayProductos = await this.leerArchivo();
+            const newArray = arrayProductos.filter(item => item.id !==id);
+            await this.guardarArchivo(newArray);
+
+        }catch (error){
+            console.log ("Error al borrar el Producto", error)
+        }
+    }
+
+
+
 }
-
-
 
 
 
@@ -143,6 +154,8 @@ const cadena={
 
 manager.addProduct(cadena);
 
+
+
 const gafas = {
   title: "Aviator RayBan",
   description: "Modelo Aviator P RayBan",
@@ -173,12 +186,22 @@ const pulsera ={
     stock: 10
 };
 
-
+/*
 async function testeamosActualizar(){
     await manager.updateProduct(1,pulsera);
 }
 
 testeamosActualizar();
+*/
+
+async function testeamosBorrar(){
+    await manager.deleteProduct(2);
+}
+testeamosBorrar();
+
+
+
+
 
 
 
