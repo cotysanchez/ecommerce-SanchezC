@@ -194,6 +194,7 @@ async function testeamosActualizar(){
 testeamosActualizar();
 */
 
+
 async function testeamosBorrar(){
     await manager.deleteProduct(2);
 }
