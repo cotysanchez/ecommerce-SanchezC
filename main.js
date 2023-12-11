@@ -7,7 +7,6 @@ class ProductManager {
     constructor(path){
         this.products= [];
         this.path = path;
-
     }
     
      async addProduct (nuevoObjeto){
@@ -86,7 +85,6 @@ class ProductManager {
         } catch (eror){
             console.log("Error al Guardar el Archivo", error);
         }
-
     }
 
     async updateProduct(id, productoActualizado){
@@ -101,7 +99,6 @@ class ProductManager {
             }else {
                 console.log("No se encontro el producto");
             }
-
     
         }catch (error){
             console.log ("Error al Actualizar el Producto", error);
@@ -119,10 +116,7 @@ class ProductManager {
         }
     }
 
-
-
 }
-
 
 
 //Testing 
@@ -138,7 +132,6 @@ const reloj ={
     thumbnail:"sin imagen",
     code: "abc123",
     stock: 10
-
 }
 
 manager.addProduct(reloj);
@@ -154,8 +147,6 @@ const cadena={
 
 manager.addProduct(cadena);
 
-
-
 const gafas = {
   title: "Aviator RayBan",
   description: "Modelo Aviator P RayBan",
@@ -169,15 +160,16 @@ manager.addProduct(gafas);
 
 manager.getProducts();
 
+/*
 async function testeamosBusquedaPorId(){
     const buscado=await manager.getProductById(2);
     console.log(buscado);
 }
 
 testeamosBusquedaPorId();
+*/
 
-
-
+/*
 const pulsera ={
     id:1,
     title: "Pulsera",
@@ -194,15 +186,15 @@ async function testeamosActualizar(){
 }
 
 testeamosActualizar();
+*/
 
 
-
-
+/*
 async function testeamosBorrar(){
     await manager.deleteProduct(2);
 }
 testeamosBorrar();
-
+*/
 
 
 
