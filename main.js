@@ -34,10 +34,7 @@ class ProductManager {
         }
 
         this.products.push(newProduct);
-
         await this.guardarArchivo(this.products);
-
-
     }
 
 
@@ -63,7 +60,6 @@ class ProductManager {
     }
 
 }
-    
 
     async leerArchivo(){ 
 
@@ -75,7 +71,6 @@ class ProductManager {
         } catch (error){
             console.log('Error al leer un Archivo', error);
         }
-
     }
 
     async guardarArchivo(arrayProductos){
@@ -115,7 +110,6 @@ class ProductManager {
             console.log ("Error al borrar el Producto", error)
         }
     }
-
 }
 
 
